@@ -28,4 +28,9 @@ describe('calculateTotalCost', () => {
   test('maintains decimal precision', () => {
     expect(calculateTotalCost(123.456, 789.123)).toBeCloseTo(912.579);
   });
+   // Large numbers
+   test('handles large cost values', () => {
+    expect(calculateTotalCost(1e6, 2.5e6)).toBe(3.5e6);
+    expect(calculateTotalCost(Number.MAX_SAFE_INTEGER, 0)).toBe(Number.MAX_SAFE_INTEGER);
+  });
 });
