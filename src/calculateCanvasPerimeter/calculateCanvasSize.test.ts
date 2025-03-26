@@ -12,4 +12,8 @@ describe("calculateCanvasSize", () => {
   test("handles decimal numbers by truncating", () => {
     expect(calculateCanvasSize("10.5", "20.9")).toEqual(60); // 2*(10+20) = 60
   });
+  test("handles negative numbers", () => {
+    expect(calculateCanvasSize("-10", "20")).toEqual(20);
+    expect(calculateCanvasSize("-5", "-5")).toEqual(-20);
+  });
 });
