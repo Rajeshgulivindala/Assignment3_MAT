@@ -12,5 +12,9 @@ describe("calculateCanvasSize - Area Calculation", () => {
     expect(calculateCanvasSize("10", "0")).toBe(0);
     expect(calculateCanvasSize("0", "0")).toBe(0);
   });
+  // Decimal handling
+  test("truncates decimal values", () => {
+    expect(calculateCanvasSize("5.9", "2.1")).toBe(10); // 5*2=10
+  });
   
 });
