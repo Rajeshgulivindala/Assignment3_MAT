@@ -20,5 +20,9 @@ describe('estimatePaintingTime', () => {
     expect(estimatePaintingTime(100, -10)).toBe(-10);
     expect(estimatePaintingTime(-100, -10)).toBe(10);
   });
+  test('should handle decimal values precisely', () => {
+    expect(estimatePaintingTime(75.5, 10)).toBeCloseTo(7.55);
+    expect(estimatePaintingTime(100, 7.5)).toBeCloseTo(13.333, 3);
+  });
 });
 
