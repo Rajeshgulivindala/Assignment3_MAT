@@ -20,4 +20,9 @@ describe('calculatePaintCost', () => {
     expect(calculatePaintCost(10, -5)).toBe(-50);
     expect(calculatePaintCost(-10, -5)).toBe(50);
   });
+  test('should handle decimal values precisely', () => {
+    expect(calculatePaintCost(3.5, 2.5)).toBeCloseTo(8.75); // 3.5 * 2.5 = 8.75
+    expect(calculatePaintCost(1.25, 4)).toBe(5); // 1.25 * 4 = 5
+  });
+  
 });
