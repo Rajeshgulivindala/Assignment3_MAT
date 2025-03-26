@@ -28,5 +28,9 @@ describe('estimatePaintingTime', () => {
     expect(estimatePaintingTime(1e6, 1e3)).toBe(1e3);
     expect(estimatePaintingTime(Number.MAX_SAFE_INTEGER, 1)).toBe(Number.MAX_SAFE_INTEGER);
   });
+  test('should return NaN for invalid inputs', () => {
+    expect(estimatePaintingTime(NaN, 10)).toBeNaN();
+    expect(estimatePaintingTime(100, NaN)).toBeNaN();
+  });
 });
 
