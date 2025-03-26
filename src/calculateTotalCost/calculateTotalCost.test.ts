@@ -24,4 +24,8 @@ describe('calculateTotalCost', () => {
   test('should return 0 when both costs are 0', () => {
     expect(calculateTotalCost(0, 0)).toBe(0);
   });
+  // Decimal precision
+  test('maintains decimal precision', () => {
+    expect(calculateTotalCost(123.456, 789.123)).toBeCloseTo(912.579);
+  });
 });
