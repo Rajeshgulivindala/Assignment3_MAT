@@ -9,4 +9,7 @@ describe("calculateCanvasSize", () => {
     expect(calculateCanvasSize("0", "10")).toEqual(20);
     expect(calculateCanvasSize("0", "0")).toEqual(0);
   });
+  test("handles decimal numbers by truncating", () => {
+    expect(calculateCanvasSize("10.5", "20.9")).toEqual(60); // 2*(10+20) = 60
+  });
 });
